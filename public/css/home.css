@@ -1,4 +1,22 @@
 #header{
-    background-image: url("/images/header-bg.jpeg");
+    background-image: url(/assets/header-bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
+    height: 40vh;
+    color: white;
+}
+
+.bg-img{
+    background: rgba(0, 0, 0, 0.5);
+    height: 40vh;
+}
+
+#rekomendasi{
+    margin-top: 2rem;
+    padding-top: 1rem;
+}
+
+.gor-card{
+    margin: 1rem 0;
 }
