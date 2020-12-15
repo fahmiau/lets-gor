@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class RegisterController extends Controller
 {
     public function index(){
-        return view('auth.register_sementara');
+        return view('auth.register');
     }
 
     public function register(Request $request){

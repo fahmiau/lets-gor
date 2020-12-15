@@ -13,7 +13,7 @@
             </div>
         @endif
     <form action="/login" method="POST">
-    @csrf
+        @csrf
         <input type="text" name="email" placeholder="email"><br>
         <input type="password" name="password" placeholder="password"><br>
         <button type="submit">Login</button>

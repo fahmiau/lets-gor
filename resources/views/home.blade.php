@@ -138,7 +138,28 @@
             
             <div class="tab-content">
                 <div class="tab-pane active" id="kategori" role="tabpanel" aria-labelledby="kategori">
-
+                    <div class="row">
+                        <div class="col-s6 col-md-3">
+                            <a href="">
+                                <img class="icon-olahraga" src="{{asset("assets/badmintonicon.png")}}" alt="">
+                            </a>
+                        </div>
+                        <div class="col-s6 col-md-3">
+                            <a href="">
+                                <img class="icon-olahraga" src="{{asset("assets/basketicon.png")}}" alt="">
+                            </a>
+                        </div>
+                        <div class="col-s6 col-md-3">
+                            <a href="">
+                                <img class="icon-olahraga" src="{{asset("assets/tennisicon.png")}}" alt="">
+                            </a>
+                        </div>
+                        <div class="col-s6 col-md-3">
+                            <a href="">
+                                <img class="icon-olahraga" src="{{asset("assets/soccericon.png")}}" alt="">
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane" id="kota" role="tabpanel" aria-labelledby="kota">
 
@@ -148,6 +169,13 @@
                 </div>
             </div>
             
+        </div>
+        <div>
+            <h3>Mengapa Anda Harus Memilih Kami?</h3>
+            <p>Dengan Let'sGOR kami akan membantu anda untuk menemukan tempat olahraga sesuai keinginan dan kebutuhuan anda!</p>
+            <div class="row">
+                
+            </div>
         </div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
