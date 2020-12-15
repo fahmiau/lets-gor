@@ -25,6 +25,10 @@ Route::get('/logout','LoginController@logout');
 Route::get('/register','RegisterController@index')->middleware('guest');
 Route::post('/register','RegisterController@register');
 
+Route::get('/gor', function (){
+    return view('layouts.gorDetail');
+});
+
 
 Route::group(['middleware' => 'loggedIn'], function(){
     Route::get('/admin', 'AdminController@index');

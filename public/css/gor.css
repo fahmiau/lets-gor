@@ -1,0 +1,17 @@
+.green-bg-dark{
+  background-color: #31BC37;
+}
+
+.first-image{
+  max-width: 100%;
+}
+
+.green-text{
+  color: #31BC37;
+}
+
+.round-btn{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}

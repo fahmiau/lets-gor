@@ -120,8 +120,10 @@
             </div>
         </div>
         {{-- Cari --}}
-        <div class="container">
-            <div class="text-center">
+        <div class="green-bg py-4">
+
+            <div class="container">
+                <div class="text-center">
                 <h3>Cari berdasarkan</h3>
             </div>
             <ul class="nav nav-tabs justify-content-center" id="groupTab" role="tablist">
@@ -137,7 +139,7 @@
             </ul>
             
             <div class="tab-content">
-                <div class="tab-pane active" id="kategori" role="tabpanel" aria-labelledby="kategori">
+                <div class="tab-pane active kategori" id="kategori" role="tabpanel" aria-labelledby="kategori">
                     <div class="row">
                         <div class="col-s6 col-md-3">
                             <a href="">
@@ -162,19 +164,57 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="kota" role="tabpanel" aria-labelledby="kota">
-
+                    
                 </div>
                 <div class="tab-pane" id="populer" role="tabpanel" aria-labelledby="populer">
-
+                    
                 </div>
             </div>
             
         </div>
-        <div>
-            <h3>Mengapa Anda Harus Memilih Kami?</h3>
-            <p>Dengan Let'sGOR kami akan membantu anda untuk menemukan tempat olahraga sesuai keinginan dan kebutuhuan anda!</p>
-            <div class="row">
-                
+    </div>
+        <div class="text-center">
+            <div class="mt-5 mb-5">
+                <h3>Mengapa Anda Harus Memilih Kami?</h3>
+                <p class="mt-4">Dengan Let'sGOR kami akan membantu anda untuk menemukan tempat olahraga sesuai keinginan dan kebutuhuan anda!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div>
+                        <div class="mb-3">
+                            <img class="icon-size" src="{{asset("assets/pin.svg")}}" alt="">
+                        </div>
+                        <div>
+                            <p>
+                                Temukan apa yang anda inginkan
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <div class="mb-3">
+                            <img class="icon-size" src="{{asset("assets/stopwatch.svg")}}" alt="">
+                        </div>
+                        <div>
+                            <p>
+                                Pesan tempat dengan ceepat dan mudah
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <div class="mb-3">
+                            <img class="icon-size" src="{{asset("assets/square-blocks-outline.svg")}}" alt="">
+                        </div>
+                        <div>
+                            <p>
+                                Kemudahan dalm menggunakan informasi
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="flex-center position-ref full-height">
