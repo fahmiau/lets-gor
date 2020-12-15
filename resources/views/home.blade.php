@@ -20,14 +20,25 @@
         <div id="header">
             <div class="bg-img">
                 <nav>
+                @if(Session::has('token_api')))
                     <ul class="nav justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Daftar</a>
+                            <a class="nav-link text-light" href="#">{{session('name')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#">Masuk</a>
+                            <a class="nav-link text-light" href="/logout">Logout</a>
                         </li>
                     </ul>
+                    @else
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="/register">Daftar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="/login">Masuk</a>
+                        </li>
+                    </ul>
+                @endif
                 </nav>
                 <div class="container">
                     <h1>Let's Gor!</h1>
