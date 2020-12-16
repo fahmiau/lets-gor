@@ -26,6 +26,16 @@
     height: 15rem;
 }
 
-#kategori{
+.kategori{
     padding: 1rem;
+}
+
+.icon-size{
+    height: 3rem;
+    width: 3rem;
+    color: #31BC37;
+}
+
+.green-bg{
+    background-color: #ECFFEC;
 }
