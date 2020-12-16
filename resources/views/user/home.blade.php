@@ -53,24 +53,19 @@
             
             <div class="tab-content">
                 <div class="tab-pane active kategori" id="kategori" role="tabpanel" aria-labelledby="kategori">
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <div class="col-s6 col-md-3">
-                            <a href="">
+                            <a href="/gor/kategori/5">
                                 <img class="icon-olahraga" src="{{asset("assets/badmintonicon.png")}}" alt="">
                             </a>
                         </div>
                         <div class="col-s6 col-md-3">
-                            <a href="">
+                            <a href="/gor/kategori/1">
                                 <img class="icon-olahraga" src="{{asset("assets/basketicon.png")}}" alt="">
                             </a>
                         </div>
                         <div class="col-s6 col-md-3">
-                            <a href="">
-                                <img class="icon-olahraga" src="{{asset("assets/tennisicon.png")}}" alt="">
-                            </a>
-                        </div>
-                        <div class="col-s6 col-md-3">
-                            <a href="">
+                            <a href="/gor/kategori/4">
                                 <img class="icon-olahraga" src="{{asset("assets/soccericon.png")}}" alt="">
                             </a>
                         </div>

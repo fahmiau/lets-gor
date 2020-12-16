@@ -20,7 +20,7 @@
                     <hr>
                     <p style="text-align:center">Silahkan tunggu konfirmasi dari pihak GOR<br>
                     Anda dapat melihat status konfirmasi di halaman "Booking"</p>
-                    <a style="display:block;margin:auto" class="btn btn-success" href="/me/order">Ke halaman booking</a>
+                    <a style="display:block;margin:auto" class="btn btn-success" href="/">Ke halaman booking</a>
                 </div>
             </div>
         </div>

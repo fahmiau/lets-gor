@@ -33,9 +33,10 @@ Route::get('/search', function(){
     return view('user.hasilSearch');
 });
 
-Route::post('/checkout', 'CheckoutController@index');
-Route::post('/checkout/confirmation', 'CheckoutController@confirmation');
-Route::post('/checkout/payment', 'CheckoutController@payment');
+//search
+Route::get('/gor/kategori/{id_kategori}', 'SearchController@kategori');
+
+
 Route::get('/payment/success', 'CheckoutController@successPage');
 
 Route::group(['middleware' => 'loggedIn'], function(){
@@ -53,4 +54,8 @@ Route::group(['middleware' => 'loggedIn'], function(){
 
     Route::get('/gorku/jadwal', 'GorkuController@jadwal');
     Route::post('/gorku/jadwal', 'GorkuController@updateJadwal');
+
+    Route::post('/checkout', 'CheckoutController@index');
+    Route::post('/checkout/confirmation', 'CheckoutController@confirmation');
+    Route::post('/checkout/payment', 'CheckoutController@payment');
 });
