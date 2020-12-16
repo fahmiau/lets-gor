@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('user.home');
 });
 
 //auth
@@ -26,15 +26,15 @@ Route::get('/register','RegisterController@index')->middleware('guest');
 Route::post('/register','RegisterController@register');
 
 Route::get('/gor', function (){
-    return view('layouts.gorDetail');
+    return view('user.gorDetail');
 });
 
 Route::get('/history', function(){
-    return view('layouts.userHistory');
+    return view('user.userHistory');
 });
 
 Route::get('/search', function(){
-    return view('layouts.hasilSearch');
+    return view('user.hasilSearch');
 });
 
 Route::get('/checkout', 'CheckoutController@index');
