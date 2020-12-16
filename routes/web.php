@@ -29,6 +29,13 @@ Route::get('/gor', function (){
     return view('layouts.gorDetail');
 });
 
+Route::get('/history', function(){
+    return view('layouts.userHistory');
+});
+
+Route::get('/search', function(){
+    return view('layouts.hasilSearch');
+});
 
 Route::group(['middleware' => 'loggedIn'], function(){
     Route::get('/admin', 'AdminController@index');

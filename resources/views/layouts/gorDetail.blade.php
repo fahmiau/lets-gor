@@ -9,52 +9,16 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <script src="{{asset("js/bootstrap.js")}}"></script>
-    <script src="{{asset("js/mdb.min.js")}}"></script>
     <link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
     <link rel="stylesheet" href="{{asset("css/gor.css")}}">
-    <link rel="stylesheet" href="{{asset("css/mdb.css")}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light green-bg-dark">
-      <a class="navbar-brand text-light" href="#">Let's GOR</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          @if(Session::has('token_api')))
-            {{-- <ul class="nav justify-content-end"> --}}
-              <li class="nav-item">
-                <a class="nav-link text-light" href="#">{{session('name')}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="/logout">Logout</a>
-              </li>
-            {{-- </ul> --}}
-            @else
-            {{-- <ul class="nav justify-content-end"> --}}
-              <li class="nav-item">
-                <a class="nav-link text-light" href="/register">Daftar</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="/login">Masuk</a>
-              </li>
-            {{-- </ul> --}}
-          @endif
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          @csrf
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
+    @include('layouts.nav')
 
     {{-- Pake kondisi gambar pertama setengah container, gambar ke2 dst bikin row baru di setengah --}}
-    <div class="container">
+    <div class="container mt-3">
       <div class="row">
         <div class="col-md-6">
           <img src="{{asset("assets/GOR-1.jpg")}}" alt="" class="first-image">
@@ -153,15 +117,15 @@
             </div>
           </div>
         </div>
-        <div id="lapangan">
+        <div id="lapangan" class="container">
           <h4 class="mt-3">Lapangan</h4>
-          <div class="row border border-dark">
-            <div class="col-md-3">
+          <div class="row border border-dark rounded">
+            <div class="col-md-3 px-0">
               <img src="{{asset("assets/GOR-1.jpg")}}" alt="" style="height: 11rem">
             </div>
             <div class="col-md-6 my-auto ml-5">
               <h5>Lapangan 1</h5>
-              <ul>
+              <ul style="list-style: none">
                 <li>Tipe Olahraga :</li>
                 <li>Tipe Lapangan :</li>
                 <li>Jenis Lapangan :</li>
@@ -174,6 +138,7 @@
           <h4 class="mt-3">Pemesanan</h4>
           <form action="">
             @csrf
+            <input type="hidden" name="harga" id="harga" value="20000">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
@@ -250,20 +215,48 @@
               </div>
               <div class="col-md-3">
                 <div class="form-group">
-                  <h6 class="green-text">Jam Mulai</h6>
-                  <input placeholder="" type="text" id="jammulai" name="jammulai" class="form-control border border-dark" required>
+                  <h6 class="green-text">Durasi</h6>
+                  <select name="durasi" id="durasi" class="form-control border border-dark" required>
+                    <option value="1">1 Jam</option>
+                    <option value="2">2 Jam</option>
+                    <option value="3">3 Jam</option>
+                    <option value="4">4 Jam</option>
+                    <option value="5">5 Jam</option>
+                  </select>
                 </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <hr style="border:2px solid #31BC37">
+                <h6 class="green-text">Total Pembayaran</h6>
+                <div class="total-pembayaran"><span class=""></span></div>
+                <input type="hidden" value="" id="pembayaran" name="pembayaran">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-success mt-2">Checkout</button>
               </div>
             </div>
           </form>
         </div>
       </div>
     </div>
+    <div class="container text-center py-1 mt-5">
+      Copyright 2020 LetsGOR Team
+  </div>
   </body>
   <script>
     $(document).ready(function(){
       $('body').scrollspy({ target: '#scroll-gor' });
-      $('.datepicker').datepicker();
+      $('#durasi').change(function(){
+        console.log("asdwa");
+        var total = $('#harga').val() * $('#durasi').val();
+        console.log(total);
+        $('#pembayaran').val(total);
+        $('.total-pembayaran').find("span").text('Rp. '+ new Intl.NumberFormat().format(total));
+      });
     });
   </script>
   </html>
