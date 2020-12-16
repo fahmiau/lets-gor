@@ -14,43 +14,22 @@
             <h5>Temukan gelanggang olahraga sesuai dengan keinginanmu</h5>
         </div>
         <div class="row">
+            @foreach($gors as $gor)
             <div class="col-md-4 gor-card">
-                <div class="card">
+                <a href="/gor/{{$gor['id']}}">
+                <div class="card zoom">
                     <img src="{{asset('assets/GOR-1.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Gor Mekarsari</h5>
-                        <p>Lokasi :</p>
-                        <p>Jam Buka :<br />
-                            Jam Tutup :</p>
-                            <p>Status Lapangan : x digunakan dari y<br />
-                                Kisaran harga :</p>
+                        <h5 class="card-title">{{$gor['nama']}}</h5>
+                        <p>Lokasi : {{$gor['alamat_lengkap']}}, {{$gor['kota']}}</p>
+                        <p>Jam Buka : {{date('H:i', strtotime($gor['open_hour']))}}<br />
+                            Jam Tutup : {{date('H:i', strtotime($gor['close_hour']))}}</p>
+                            <p>Harga : Rp. Rp. {{number_format($gor['harga_per_jam'], 0, ".", ".")}}</p>
                     </div>
                 </div>
+            </a>
             </div>
-            <div class="col-md-4 gor-card">
-                <div class="card">
-                    <img src="{{asset('assets/GOR-1.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gor-card">
-                <div class="card">
-                    <img src="{{asset('assets/GOR-1.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gor-card">
-                <div class="card">
-                    <img src="{{asset('assets/GOR-1.jpg')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
         {{-- Cari --}}

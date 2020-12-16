@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user.home');
-});
+Route::get('/', 'PageController@index');
 
 //auth
 Route::get('/login','LoginController@index')->middleware('guest');
