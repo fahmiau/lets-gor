@@ -6,7 +6,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      @if(Session::has('token_api')))
+      @if(Session::has('token_api'))
         {{-- <ul class="nav justify-content-end"> --}}
           <li class="nav-item">
             <a class="nav-link text-light" href="#">{{session('name')}}</a>
