@@ -33,4 +33,8 @@ Route::group(['middleware' => 'loggedIn'], function(){
 
     //gorku
     Route::get('/gorku', 'GorkuController@index');
+    Route::get('/gorku/booking', 'GorkuController@booking');
+    Route::get('/gorku/booking/{id_transaksi}', 'GorkuController@bookingDetail');
+    Route::get('/gorku/approve/{id_transaksi}', 'GorkuController@approveTransaksi');
+    Route::get('/gorku/decline/{id_transaksi}', 'GorkuController@declineTransaksi');
 });

@@ -28,6 +28,7 @@ class LoginController extends Controller
                 'email' => $data['user']['email'],
                 'noHP' => $data['user']['noHP'],
                 'token_api' => $data['success']['token'],
+                'id_gor' => $data['gor']['id'],
             ]);
 
         return redirect('/');
