@@ -2,6 +2,8 @@
 @section('title', 'Add GOR | LetsGOR')
 @section('subtitle', 'Tambah data GOR')
 @section('content')
+<div class="row">
+    <div class="col-md-12">
     <h1 class="mb-5">Add GOR</h1>
     @if($message = Session::get('message'))
         <p class="alert alert-info">{{$message}}</p><br>
@@ -44,4 +46,7 @@
         <button type="submit">Submit</button>
 
     </form>
+    
+    </div>
+</div>
 @endsection
