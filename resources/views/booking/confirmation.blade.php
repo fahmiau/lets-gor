@@ -8,11 +8,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/checkout.css">
-    <title>Booking di LetsGOR! | LetsGOR!</title>
+    <title>Konfirmasi Pembayaran | LetsGOR!</title>
   </head>
   <body>
     <div class="container">
-    <form action="/checkout/confirmation" method="post">
+    <form action="/checkout/payment" method="post">
     <img class="logo" src="/assets/logo.png" alt="">
         <div class="row justify-content-center" style="">
             @csrf
@@ -38,7 +38,7 @@
                         <div class="col-md-12">
                             <div class="form-group form-data">
                                 <label>GOR</label>
-                                <input type="text" class="form-control" value="{{$gor['nama']}}" name="nama" readonly>
+                                <input type="text" class="form-control" value="{{$data['nama']}}" readonly>
                             </div>
                         </div>
                     </div>
@@ -49,30 +49,17 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Rp.</span>
                             </div>
-                                <input type="number" class="form-control" name="harga_per_jam" value="{{$gor['harga_per_jam']}}" readonly>
+                                <input type="text" class="form-control" name="harga_per_jam" value="{{$data['harga_per_jam']}}" readonly>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label>Jam Operasional GOR</label>
-                            <table class="table table-striped">
-                            @foreach($jadwal as $j)
-                                <tr>
-                                    <td>{{$j['hari']}}</td>
-                                    <td class="text-right">{{date('H:i', strtotime($j['open_hour']))}} - {{date('H:i', strtotime($j['close_hour']))}}</td>
-                                </tr>
-                            @endforeach
-                            </table>
-                        </div>
-                    </div>
                     <hr>
-                    <h5 style="text-align:center">Atur Jadwal Booking</h5>
+                    <h5 style="text-align:center">Waktu yang dipesan</h5>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group form-data">
                                 <label>Tanggal</label>
-                                <input type="date" class="form-control" name="tanggal">
+                                <input type="date" class="form-control" value="{{$data['tanggal']}}" name="tanggal" readonly>
                             </div>
                         </div>
                     </div>
@@ -80,18 +67,46 @@
                         <div class="col-md-6">
                             <div class="form-group form-data">
                                 <label>Jam Mulai</label>
-                                <input type="time" class="form-control" name="start_hour">
+                                <input type="time" class="form-control" value="{{$data['start_hour']}}" name="start_hour" readonly>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-data">
                                 <label>Jam Selesai</label>
-                                <input type="time" class="form-control" name="finish_hour">
+                                <input type="time" class="form-control" value="{{$data['finish_hour']}}" name="finish_hour" readonly>
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                        <label>Total</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Rp.</span>
+                            </div>
+                                <input type="number" class="form-control" name="total" value="{{$total}}" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h5 style="text-align:center" class="mb-3">Payment Method</h5>
+                    <div class="row justify-content-center">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Bank Transfer</label>
+                        </div>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Credit Card</label>
+                        </div>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineRadio3" value="option3">
+                            <label class="form-check-label" for="inlineRadio3">Gopay</label>
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" class="card-footer btn btn-success btn-continue" style="">Continue</button>
+                <button type="submit" class="card-footer btn btn-success btn-continue" style="">Pay!</button>
             </div>
             <!-- hidden -->
             <input type="hidden" name="id_gor" value="{{$id_gor}}">

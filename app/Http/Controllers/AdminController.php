@@ -17,7 +17,7 @@ class AdminController extends Controller
 
     public function add(Request $request){
         
-        $response = Http::withToken(session('token_api'))->post('http://localhost:8080/api/gor', [
+        $response = Http::withToken(session('token_api'))->post('https://api.letsgor.my.id/api/gor', [
             'id_pemilik' => $request->id_pemilik,
             'id_kategori' => $request->id_kategori,
             'nama' => $request->nama,

@@ -12,7 +12,7 @@ class RegisterController extends Controller
     }
 
     public function register(Request $request){
-        $response = Http::post('http://localhost:8080/api/register', [
+        $response = Http::post('https://api.letsgor.my.id/api/register', [
             'name' => $request->name,
             'email' => $request->email,
             'noHP' => $request->noHP,

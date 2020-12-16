@@ -25,9 +25,7 @@ Route::get('/logout','LoginController@logout');
 Route::get('/register','RegisterController@index')->middleware('guest');
 Route::post('/register','RegisterController@register');
 
-Route::get('/gor', function (){
-    return view('user.gorDetail');
-});
+Route::get('/gor/{id_gor}', 'GorController@show');
 
 Route::get('/history', function(){
     return view('user.userHistory');
@@ -37,8 +35,10 @@ Route::get('/search', function(){
     return view('user.hasilSearch');
 });
 
-Route::get('/checkout', 'CheckoutController@index');
+Route::post('/checkout', 'CheckoutController@index');
 Route::post('/checkout/confirmation', 'CheckoutController@confirmation');
+Route::post('/checkout/payment', 'CheckoutController@payment');
+Route::get('/payment/success', 'CheckoutController@successPage');
 
 Route::group(['middleware' => 'loggedIn'], function(){
     Route::get('/admin', 'AdminController@index');

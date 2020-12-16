@@ -13,7 +13,7 @@ class LoginController extends Controller
 
     public function login(Request $request){
         
-        $response = Http::post('http://localhost:8080/api/login', [
+        $response = Http::post('https://api.letsgor.my.id/api/login', [
             'email' => $request->email,
             'password' => $request->password,
         ]);
