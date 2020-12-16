@@ -37,6 +37,9 @@ Route::get('/search', function(){
     return view('layouts.hasilSearch');
 });
 
+Route::get('/checkout', 'CheckoutController@index');
+Route::post('/checkout/confirmation', 'CheckoutController@confirmation');
+
 Route::group(['middleware' => 'loggedIn'], function(){
     Route::get('/admin', 'AdminController@index');
     Route::get('/admin/gor/add', 'AdminController@addPage');
