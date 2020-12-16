@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="/adminPage/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
 </head>
 
@@ -26,19 +27,19 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item {{request()->is('gorku') ? 'active' : '' }}">
-            <a class="nav-link" href="/admin">
+            <a class="nav-link" href="/gorku">
               <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
+              <p>Gorku</p>
             </a>
           </li>
-          <li class="nav-item {{request()->is('gorku/booking') ? 'active' : '' }}">
-            <a class="nav-link" href="/gorku/booking">
+          <li class="nav-item {{request()->is('gorku/booking*') ? 'active' : '' }}">
+            <a class="nav-link" href="/gorku/booking/terbaru">
               <i class="material-icons">bubble_chart</i>
               <p>Booking</p>
             </a>
           </li>
           <li class="nav-item {{request()->is('gorku/jadwal') ? 'active' : '' }}">
-            <a class="nav-link" href="/admin/gor/add">
+            <a class="nav-link" href="/gorku/jadwal">
               <i class="material-icons">bubble_chart</i>
               <p>Jadwal GOR</p>
             </a>
@@ -97,8 +98,9 @@
   </div>
   
   <!--   Core JS Files   -->
-  <script src="/adminPage/js/core/jquery.min.js"></script>
-  <script src="/adminPage/js/core/popper.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="/adminPage/js/core/bootstrap-material-design.min.js"></script>
   <script src="/adminPage/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!-- Plugin for the momentJs  -->

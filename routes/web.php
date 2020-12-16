@@ -44,8 +44,12 @@ Route::group(['middleware' => 'loggedIn'], function(){
 
     //gorku
     Route::get('/gorku', 'GorkuController@index');
-    Route::get('/gorku/booking', 'GorkuController@booking');
+    Route::get('/gorku/booking/terbaru', 'GorkuController@bookingNew');
+    Route::get('/gorku/booking/history', 'GorkuController@bookingHistory');
     Route::get('/gorku/booking/{id_transaksi}', 'GorkuController@bookingDetail');
     Route::get('/gorku/approve/{id_transaksi}', 'GorkuController@approveTransaksi');
     Route::get('/gorku/decline/{id_transaksi}', 'GorkuController@declineTransaksi');
+
+    Route::get('/gorku/jadwal', 'GorkuController@jadwal');
+    Route::post('/gorku/jadwal', 'GorkuController@updateJadwal');
 });

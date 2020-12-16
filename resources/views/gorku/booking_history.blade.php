@@ -15,10 +15,10 @@
                   @endif
                   <ul class="nav nav-pills">
                     <li class="nav-item">
-                      <a class="nav-link {{request()->is('gorku/booking/terbaru') ? 'active' : '' }}" href="/gorku/booking/terbaru">Terbaru</a>
+                      <a class="nav-link" href="/gorku/booking/terbaru">Terbaru</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link {{request()->is('gorku/booking/history') ? 'active' : '' }}" href="/gorku/booking/history">History</a>
+                      <a class="nav-link active" href="/gorku/booking/history">History</a>
                     </li>
                   </ul>
                   <div class="table-responsive">
@@ -31,22 +31,18 @@
                           Name
                         </th>
                         <th>
-                          Tanggal
+                          Tanggal Transaksi
                         </th>
                         <th>
-                          Jam Mulai
+                          Approval
                         </th>
-                        <th>
-                          Jam Selesai
-                        </th>
-                        
                         <th style="text-align:right">
                           
                         </th>
                       </thead>
                       <tbody>
                         @foreach($bookings as $book)
-                        @if($book['approval'] == 'Pending' && $book['status'] == 'Lunas')
+                        @if($book['approval'] != 'Pending')
                         <tr>
                           <td>
                             {{$book['id']}}
@@ -58,12 +54,8 @@
                             {{date('d M Y', strtotime($book['tanggal']))}}
                           </td>
                           <td>
-                            {{date('H:i', strtotime($book['start_hour']))}}
+                            {{$book['approval']}}
                           </td>
-                          <td>
-                            {{date('H:i', strtotime($book['finish_hour']))}}
-                          </td>
-                         
                           <td style="text-align:right">
                             <a class="btn btn-primary" href="/gorku/booking/{{$book['id']}}">View</a>
                           </td>
