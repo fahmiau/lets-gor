@@ -57,7 +57,6 @@
                         <div class="col-s6 col-md-3">
                             <a href="/gor/kategori/5">
                                 <img class="icon-olahraga" src="{{asset("assets/badmintonicon.png")}}" alt="">
-                                <p style="text-align:center" for="">test</p>
                             </a>
                         </div>
                         <div class="col-s6 col-md-3">

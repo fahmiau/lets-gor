@@ -26,7 +26,7 @@ class PageController extends Controller
             
         }
 
-        $items = Arr::random($gors, 2);
+        $items = Arr::random($gors, 6);
 
         return view('user.home', ['gors' => $items]);
     }
