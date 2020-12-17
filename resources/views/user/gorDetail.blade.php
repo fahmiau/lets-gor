@@ -55,12 +55,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#foto">Foto</a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a class="nav-link" href="#lapangan">Lapangan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#pemesanan">Pemesanan</a>
-        </li>
+        </li> --}}
       </ul>
     </nav>
 
@@ -110,7 +110,7 @@
           </div>
         </div>
       </div>
-      <div id="lapangan" class="container">
+      {{-- <div id="lapangan" class="container">
         <h4 class="mt-3">Lapangan</h4>
         <div class="row border border-dark rounded">
           <div class="col-md-3 px-0">
@@ -126,7 +126,7 @@
             <h5 class="green-text">Harga Sewa</h5>
           </div>
         </div>
-      </div>
+      </div> --}}
       
     </div>
   </div>
