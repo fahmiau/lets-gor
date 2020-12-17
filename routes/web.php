@@ -35,6 +35,7 @@ Route::get('/search', function(){
 
 //search
 Route::get('/gor/kategori/{id_kategori}', 'SearchController@kategori');
+Route::get('/gor/kota/{kota}', 'SearchController@kota');
 
 
 Route::get('/payment/success', 'CheckoutController@successPage');

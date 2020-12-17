@@ -1,7 +1,7 @@
 <div id="header">
   <div class="bg-img">
       <nav>
-      @if(Session::has('token_api')))
+      @if(Session::has('token_api'))
           <ul class="nav justify-content-end">
               <li class="nav-item">
                   <a class="nav-link text-light" href="#">{{session('name')}}</a>

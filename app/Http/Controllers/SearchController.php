@@ -30,6 +30,28 @@ class SearchController extends Controller
         return view('user.hasilSearchKategori', ['nama_kategori' => $nama_kategori, 'gors' => $gors]);
     }
 
+    public function kota($kota){
+
+        $response = Http::get('https://api.letsgor.my.id/api/lokasi/?kota='.$kota);
+        $gors = json_decode($response, true);
+        dd($gors);
+    
+        //melihat hari
+        $hariIniInggris = date('l');
+        $hariIni = $this->hariIndo($hariIniInggris);
+
+        foreach($gors as $key => $gor){
+            $response = Http::get("https://api.letsgor.my.id/api/jadwal/gor/".$gor['id']."/".$hariIni);
+            $jadwal = json_decode($response, true);
+            
+            $gors[$key]['open_hour'] = $jadwal['open_hour'];
+            $gors[$key]['close_hour'] = $jadwal['close_hour'];
+            
+        }
+
+        return view('user.hasilSearchKota', ['nama_kota' => $kota, 'gors' => $gors]);
+    }
+
     function nama_kategori($id_kategori){
         switch ($id_kategori) {
             case '1':

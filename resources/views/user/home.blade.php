@@ -41,13 +41,13 @@
             </div>
             <ul class="nav nav-tabs justify-content-center" id="groupTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="kategori" data-toggle="tab" href="#kategori" role="tab" aria-controls="kategori" aria-selected="true">Kategori</a>
+                    <a class="nav-link active" id="kategori-tab" data-toggle="pills" href="#kategori" role="tab" aria-controls="kategori" aria-selected="true">Kategori</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="kota" data-toggle="tab" href="#kota" role="tab" aria-controls="kota" aria-selected="false">Kota</a>
+                    <a class="nav-link" id="kota-tab" data-toggle="pills" href="#kota" role="tab" aria-controls="kota" aria-selected="false">Kota</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="populer" data-toggle="tab" href="#populer" role="tab" aria-controls="populer" aria-selected="false">Populer</a>
+                    <a class="nav-link" id="populer-tab" data-toggle="pills" href="#populer" role="tab" aria-controls="populer" aria-selected="false">Populer</a>
                 </li>
             </ul>
             
@@ -57,6 +57,7 @@
                         <div class="col-s6 col-md-3">
                             <a href="/gor/kategori/5">
                                 <img class="icon-olahraga" src="{{asset("assets/badmintonicon.png")}}" alt="">
+                                <p style="text-align:center" for="">test</p>
                             </a>
                         </div>
                         <div class="col-s6 col-md-3">
@@ -72,7 +73,46 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="kota" role="tabpanel" aria-labelledby="kota">
-                    
+                    <div class="row justify-content-center">
+                        <div class="col-s6 col-md-4">
+                            <a href="/gor/kategori/5">
+                                <img class="icon-olahraga" src="https://img.icons8.com/bubbles/2x/city.png" alt="">
+                                <p style="text-align:center" for="">Jakarta</p>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="/gor/kategori/5">
+                                <img class="icon-olahraga" src="https://img.icons8.com/bubbles/2x/city.png" alt="">
+                                <p style="text-align:center" for="">Bogor</p>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="/gor/kategori/5">
+                                <img class="icon-olahraga" src="https://img.icons8.com/bubbles/2x/city.png" alt="">
+                                <p style="text-align:center" for="">Bandung</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-s6 col-md-4">
+                            <a href="/gor/kategori/5">
+                                <img class="icon-olahraga" src="https://img.icons8.com/bubbles/2x/city.png" alt="">
+                                <p style="text-align:center" for="">Yogyakarta</p>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="/gor/kategori/5">
+                                <img class="icon-olahraga" src="https://img.icons8.com/bubbles/2x/city.png" alt="">
+                                <p style="text-align:center" for="">Bekasi</p>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="/gor/kategori/5">
+                                <img class="icon-olahraga" src="https://img.icons8.com/bubbles/2x/city.png" alt="">
+                                <p style="text-align:center" for="">Semarang</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane" id="populer" role="tabpanel" aria-labelledby="populer">
                     
